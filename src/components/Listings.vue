@@ -51,6 +51,7 @@ const fetchProperties = async () => {
     houses.value = response.data.Results.map((result) => ({
       price: result.Property.Price,
       address: result.Property.Address?.AddressText.split("|")[0],
+      link:"https://www.realtor.ca/"+ result.RelativeDetailsURL,
       image: result.Property.Photo[0]?.MedResPath
     }))
     isFetching.value = false
@@ -58,7 +59,7 @@ const fetchProperties = async () => {
     console.error(error)
   }
 }
-//fetchProperties()
+fetchProperties()
 
 watch(list_loc.value, (newValue, oldValue) => {
 
@@ -95,7 +96,6 @@ watch(list_loc.value, (newValue, oldValue) => {
 });
 
 
-fetchProperties()
 </script>
 
 <template>
@@ -104,7 +104,7 @@ fetchProperties()
 
 
 
-    <Loading v-if="isFetching"/>
+    <Loading class="loading" v-if="!isFetching"/>
 
     <div v-else v-for= "house,index in houses" :key="index" :house="house" :style="{ transitionDelay: `${index * 100}ms` }">
       <transition-group name="fade" tag="div">
@@ -113,6 +113,7 @@ fetchProperties()
     :image="house.image"
     :price="house.price"
     :address="house.address"
+    :link="house.link"
     />
   </transition-group>
     </div>
@@ -134,5 +135,8 @@ fetchProperties()
 .listings-title {
   width: 100%;
   text-align: center;
+}
+.loading{
+  margin: 3rem;
 }
 </style>

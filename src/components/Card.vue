@@ -1,11 +1,15 @@
 <template>
-    <div class="real-estate-card">
-        <img :src="image" alt="Real Estate Image" class="card-image" />
-        <div class="card-details">
-          <div class="price">{{ price }}</div>
-          <div class="address">{{ address }}</div>
-        </div>
-      </div>
+    <div>
+      <a :href="link">
+        <div class="real-estate-card">
+            <img :src="image" alt="Real Estate Image" class="card-image" />
+            <div class="card-details">
+              <div class="price">{{ price }}</div>
+              <div class="address">{{ address }}</div>
+            </div>
+          </div>
+      </a>
+    </div>
     </template>
     
     <script>
@@ -16,6 +20,7 @@
         image: String,
         price: String,
         address: String,
+        link: String
       },
     };
     </script>
@@ -42,7 +47,7 @@
       
     }
     .real-estate-card:hover .price {
-       scale:1.05;
+      
       color:  rgba(46, 234, 162, 1);
       transition: 1s;
     }
