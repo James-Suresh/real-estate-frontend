@@ -53,7 +53,7 @@ h1{
     flex-direction: column;
     justify-content: center;
    
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.50)), url("src/assets/real-estate-bg.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.50)), url("../src/assets/real-estate-bg.jpg");
    
     background-color: aqua;
     align-items: center;
