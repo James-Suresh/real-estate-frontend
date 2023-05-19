@@ -4,6 +4,8 @@ import axios from 'axios'
     import { processExpression } from "@vue/compiler-core";
     import {ref} from "vue"
 import Card from "./Card.vue"
+import Loading from "./Loading.vue"
+
 
 const houses = ref(0);
 const options = {
@@ -48,7 +50,7 @@ const fetchProperties = async () => {
         console.error(error);
       }
     };
-   fetchProperties()
+   //fetchProperties()
 
 </script>
 
@@ -57,7 +59,7 @@ const fetchProperties = async () => {
 
         <h1 class="listings-title">Listings</h1>
         
-
+<!-- 
         <div v-for="house in houses" :key="house.id" :house="house">
 
           <Card
@@ -65,16 +67,27 @@ const fetchProperties = async () => {
         :price="house.price"
         :address="house.address"
         />
-        </div>
+        </div> -->
+
+        <Card
+        class="animate__animated animate__fadeInUp animate__delay-2s"
+        image="src\assets\real-estate-bg.jpg"
+        price="house.price"
+        address="house.address"
+        />
+        <Loading/>
         
        
     </div>
 </template>
 <style scoped>
     .listings{
+      background-color: rgba(0,0,0, 0.05);
+      
         width: 100vw;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
         padding: 2rem 10vw;
     }

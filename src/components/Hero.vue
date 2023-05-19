@@ -42,14 +42,14 @@ import { ref } from 'vue';
 }
 
 .btn {
-    background-color: rebeccapurple;
+    background-color: #0ea068;
     
     height: 2rem;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
     cursor: pointer;
-    border: 2px dashed rebeccapurple;
+    border: 2px dashed #0ea068;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: .4s;
    }
@@ -62,7 +62,7 @@ import { ref } from 'vue';
     transition: .4s;
     border: 2px dashed rebeccapurple6;
     background-color: #fff;
-    color: rebeccapurple;
+    color: #17FBA2;
    }
    
    .btn:active {
