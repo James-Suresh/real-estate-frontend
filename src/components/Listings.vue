@@ -104,7 +104,7 @@ watch(list_loc.value, (newValue, oldValue) => {
 
 
 
-    <Loading class="loading" v-if="!isFetching"/>
+    <Loading class="loading" v-if="isFetching"/>
 
     <div v-else v-for= "house,index in houses" :key="index" :house="house" :style="{ transitionDelay: `${index * 100}ms` }">
       <transition-group name="fade" tag="div">
