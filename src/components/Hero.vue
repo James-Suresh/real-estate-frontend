@@ -3,15 +3,22 @@
       <!-- Content of your hero section -->
     
         <div class="search">
-            <input placeholder="Enter address" class="search-field" type="text">
-            <button class="btn">Search</button>
+            <input placeholder="Enter address" v-model="query" class="search-field" type="text">
+            <button class="btn"  @click="searchClicked">Search</button>
         </div>
 </div>
 
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { inject, ref } from 'vue';
+
+const query = ref("");
+const search= inject('search');
+const searchClicked = ()=>{
+    console.log("search")
+    search(query.value)
+}
 </script>
 
 <style scoped>
@@ -24,7 +31,7 @@ import { ref } from 'vue';
     background-position: center;
     background-size: cover;
     height: 30rem;
-    width: 100vw;
+    
     margin: 0;
 }
 .search{
