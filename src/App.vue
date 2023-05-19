@@ -39,7 +39,7 @@ provide ("search", search)
 </script>
 <template>
   <div>
-    <h1>{{ loc }}</h1>
+
     <Hero/>
     <Listings v-bind:loc="loc" />
   </div>
