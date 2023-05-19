@@ -31,18 +31,27 @@
       border-radius: 4px;
       padding: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      
+      transition: box-shadow 0.5s ease-in-out;
+      cursor: pointer;
       
     }
-
-    a:hover{
-
+    .real-estate-card:hover  {
+      transform: scale(1.1);
+      transition:1s;
+      box-shadow: 0 2px 10px rgba(46, 234, 162, 0.9);
+      
+    }
+    .real-estate-card:hover .price {
+       scale:1.05;
+      color:  rgba(46, 234, 162, 1);
+      transition: 1s;
     }
     
     .card-image {
       width: 100%;
       height: auto;
       margin-bottom: 10px;
+      
     }
     
     .card-details {
@@ -53,11 +62,15 @@
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 5px;
-      color: #000;
+      color:  rgb(14, 160, 104);
+      
     }
+    
     
     .address {
       font-size: 14px;
       color: #666666;
     }
+
+    
     </style>

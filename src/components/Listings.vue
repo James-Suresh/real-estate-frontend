@@ -95,9 +95,7 @@ watch(list_loc.value, (newValue, oldValue) => {
 });
 
 
-
-
-//fetchProperties()
+fetchProperties()
 </script>
 
 <template>
@@ -108,14 +106,18 @@ watch(list_loc.value, (newValue, oldValue) => {
 
     <Loading v-if="isFetching"/>
 
-    <div v-else v-for="house in houses" :key="house.id" :house="house">
-
-      <Card
+    <div v-else v-for= "house,index in houses" :key="index" :house="house" :style="{ transitionDelay: `${index * 100}ms` }">
+      <transition-group name="fade" tag="div">
+      <Card 
+    
     :image="house.image"
     :price="house.price"
     :address="house.address"
     />
+  </transition-group>
     </div>
+
+    
 
 
     </div>
@@ -126,7 +128,7 @@ watch(list_loc.value, (newValue, oldValue) => {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   padding: 2rem 10vw;
 }
 .listings-title {

@@ -1,10 +1,14 @@
 <template>
     <div class="hero">
       <!-- Content of your hero section -->
-    
-        <div class="search">
-            <input placeholder="Enter address" v-model="query" class="search-field" type="text">
-            <button class="btn"  @click="searchClicked">Search</button>
+
+      <h1>Lets Find Your Dream Home!</h1>
+        <div class="container">
+           
+            <div class="search">
+                <input placeholder="Enter city, province or complete address (Canada)" v-model="query" class="search-field" type="text">
+                <button class="btn"  @click="searchClicked">Search</button>
+            </div>
         </div>
 </div>
 
@@ -21,11 +25,36 @@ const searchClicked = ()=>{
 }
 </script>
 
+
 <style scoped>
+input{
+    text-indent: 2rem;
+    font-size: large;
+}
+.container{
+    padding: 0rem 2rem;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+h1{
+    margin: 3rem 0 1.5rem ;
+    text-align: center;
+    outline-width: 3\5rem;
+    color:#bcffe5;
+    font-weight:  bold;
+    outline: black;
+
+
+}
+
 .hero{
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    background-image: url("src/assets/real-estate-bg.jpg");
+   
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.50)), url("src/assets/real-estate-bg.jpg");
+   
     background-color: aqua;
     align-items: center;
     background-position: center;
@@ -39,9 +68,8 @@ const searchClicked = ()=>{
     height: 5rem;
     gap: 1rem;
     align-items: center;
-    padding: 2rem;
+    
     width: 50vw;
-    background-color: rgba(0, 0, 0, 0.3);
 }
 .search-field{
     width: 100%;
