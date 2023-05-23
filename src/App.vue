@@ -1,10 +1,15 @@
 <script setup>
-import { provide } from 'vue';
+import { onMounted, provide } from 'vue';
 import axios from 'axios'
 import { processExpression } from '@vue/compiler-core'
 import Hero from './components/Hero.vue'
 import { ref } from 'vue';
+import  gsap   from 'gsap';
 import Listings from './components/Listings.vue';
+
+
+
+
 
 const loc = ref({
   latMax: 81.14747595814636,//North East latitute
@@ -13,8 +18,10 @@ const loc = ref({
   lngMin: -136.83037765324116,//South West longitude
 })
 
+
 const search = async (query) => {
 
+ 
 
   try {
     console.log(query)
@@ -36,10 +43,21 @@ const search = async (query) => {
 }
 
 provide ("search", search)
+
+
+//Animations
+
+const container = ref(null)
+// onMounted(()=>{
+//     gsap.from(container.value, {
+//         opacity: 0,
+//         duration:1,
+        
+//       });
+//   })
 </script>
 <template>
-  <div>
-
+  <div ref="container">
     <Hero/>
     <Listings v-bind:loc="loc" />
   </div>

@@ -6,6 +6,7 @@
   background-color: rgba(0,0,0,0.05);
   font-weight: normal;
   display: flex;
+  caret-color: transparent;
 }
 
 a,

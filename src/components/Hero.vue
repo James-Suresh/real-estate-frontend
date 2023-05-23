@@ -1,11 +1,12 @@
 <template>
-    <div class="hero">
+    <div ref="hero" class="hero">
       <!-- Content of your hero section -->
-
-      <h1>Lets Find Your Dream Home!</h1>
-        <div class="container">
+        
+      <h1 ref="title1">Welcome</h1>
+      <h1 ref="title2">Lets Find Your Dream Home!</h1>
+        <div ref="search_box" class="container">
            
-            <div class="search">
+            <div  class="search">
                 <input placeholder="Enter city, province or complete address (Canada)" v-model="query" class="search-field" type="text">
                 <button class="btn"  @click="searchClicked">Search</button>
             </div>
@@ -15,35 +16,88 @@
 </template>
 
 <script setup>
-import { inject, ref } from 'vue';
-
+import { inject, onMounted, ref } from 'vue';
+import  gsap from 'gsap';
+import { Timeline } from 'gsap/gsap-core';
 const query = ref("");
 const search= inject('search');
 const searchClicked = ()=>{
     console.log("search")
     search(query.value)
 }
+
+//Animations
+const tl = gsap.timeline({paused:true})
+const hero=ref(null)
+const title1=ref(null)
+const title2=ref(null)
+const search_box=ref(null)
+
+onMounted(()=>{
+   tl.to(search_box.value, {
+    
+    opacity: 0,
+        duration: 0,
+      })
+    tl.to(title2.value, {
+        display:"none",
+    opacity: 0,
+        duration: 0,
+      })
+      tl.to(title1.value, {
+        opacity: 1,
+        duration: 1.5,
+      })
+      tl.to(title1.value, {
+        display:"none",
+        opacity: 0,
+        duration: 0.5,
+
+      })
+      
+    tl.to(title2.value, {
+        display:"block",
+    opacity: 1,
+        duration: 1,
+      })
+      tl.to(hero.value,{
+        height:"25vh",
+        duration: 2
+      })
+      tl.to(search_box.value, {
+    
+    opacity: 1,
+        duration: 0.5,
+      })
+
+      
+      
+      
+tl.play()
+  
+}
+  )
+
 </script>
 
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@300;400;500;600&display=swap');
+
 input{
     text-indent: 2rem;
     font-size: large;
 }
-.container{
-    padding: 0rem 2rem;
-    border-radius: 0.25rem;
-    background-color: rgba(255, 255, 255, 0.7);
-}
+
 h1{
-    margin: 3rem 0 1.5rem ;
+    margin: 3rem 0 ;
     text-align: center;
-    outline-width: 3\5rem;
-    color:#bcffe5;
+    outline-width: 3rem;
+    color:#ffffff;
     font-weight:  bold;
     outline: black;
-
+    font-family: 'Playfair Display', serif;
 
 }
 
@@ -53,33 +107,34 @@ h1{
     flex-direction: column;
     justify-content: center;
    
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.50)), url("https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80");
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.70)), url("../src/assets/real-estate-bg-2.jpg");
    
     background-color: aqua;
     align-items: center;
     background-position: center;
     background-size: cover;
-    height: 30rem;
+    height: 100vh;
     
     margin: 0;
 }
 .search{
     display: flex;
-    height: 5rem;
+    height: 2rem;
     gap: 1rem;
     align-items: center;
     
-    width: 50vw;
+    width: 35vw;
 }
 .search-field{
     width: 100%;
-    height: 2rem;
+    height: 100%;
+    caret-color: auto;
 }
 
 .btn {
     background-color: #0ea068;
     
-    height: 2rem;
+    height: 100%;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;

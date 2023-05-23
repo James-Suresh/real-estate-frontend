@@ -20,10 +20,31 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
   background-color: rgba(0,0,0, 0.05);
+
+  /* Hide the scrollbar */
+  ::-webkit-scrollbar {
+  width: 0; /* Adjust the width as needed */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Make the track transparent */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Make the handle transparent */
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  background-color: transparent; /* Make the corner transparent */
+}
 }
 
 /* semantic color variables for this project */
 :root {
+
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);

@@ -31,30 +31,33 @@
       margin: 0;
       flex-direction: column;
       width: 300px;
+      height: 300px;
       background-color: #ffffff;
       border: 1px solid #e0e0e0;
       border-radius: 4px;
       padding: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.5s ease-in-out;
+      box-shadow:  20px 20px 60px #bebebe;
+             
+      transition: 0.5s ease-in-out;
       cursor: pointer;
       
     }
     .real-estate-card:hover  {
       transform: scale(1.1);
-      transition:1s;
-      box-shadow: 0 2px 10px rgba(46, 234, 162, 0.9);
+      transition: 0.5s ease-in-out;
+      box-shadow:  0px 0px 10px rgba(46, 234, 162, 0.9);;
+      
       
     }
     .real-estate-card:hover .price {
       
       color:  rgba(46, 234, 162, 1);
-      transition: 1s;
+      transition: 0.5s ease-in-out;
     }
     
     .card-image {
       width: 100%;
-      height: auto;
+      height: 100%;
       margin-bottom: 10px;
       
     }
