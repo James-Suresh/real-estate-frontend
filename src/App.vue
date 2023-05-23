@@ -4,7 +4,7 @@ import axios from 'axios'
 import { processExpression } from '@vue/compiler-core'
 import Hero from './components/Hero.vue'
 import { ref } from 'vue';
-import  gsap   from 'gsap';
+import  {gsap }  from 'gsap';
 import Listings from './components/Listings.vue';
 
 

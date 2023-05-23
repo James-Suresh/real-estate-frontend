@@ -17,7 +17,7 @@
 
 <script setup>
 import { inject, onMounted, ref } from 'vue';
-import  gsap from 'gsap';
+import  {gsap} from 'gsap';
 import { Timeline } from 'gsap/gsap-core';
 const query = ref("");
 const search= inject('search');

@@ -4,7 +4,7 @@ import { ref, watch, computed, onMounted, onUnmounted, onBeforeUnmount, onUpdate
 import Card from './Card.vue'
 import Loading from './Loading.vue'
 import Hero from './Hero.vue'
-import gsap from 'gsap'
+import {gsap} from 'gsap'
 
 //Variables
 const houses = ref(Array(5))
