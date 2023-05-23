@@ -107,7 +107,7 @@ h1{
     flex-direction: column;
     justify-content: center;
    
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.70)), url("./src/assets/real-estate-bg-2.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.70)), url("/images/real-estate-bg-2.jpg");
    
     background-color: aqua;
     align-items: center;
