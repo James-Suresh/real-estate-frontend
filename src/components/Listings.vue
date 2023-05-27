@@ -29,7 +29,7 @@ const options = ref({
     NumberOfDays: '0',
     BedRange: '0-0',
     BathRange: '0-0',
-    PriceMin: '251780',
+    PriceMin: '100000',
     RentMin: '0',
     BuildingTypeId: '1',
     TransactionTypeId: '2'
