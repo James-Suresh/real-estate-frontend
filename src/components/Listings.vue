@@ -65,6 +65,7 @@ watch(list_loc.value, (newValue, oldValue) => {
   const { latMax, latMin, lngMin, lngMax } = list_loc.value
 
   options.value.params = {
+    ...options.value.params,
     LatitudeMax: latMax,
     LatitudeMin: latMin,
     LongitudeMin: lngMin,
